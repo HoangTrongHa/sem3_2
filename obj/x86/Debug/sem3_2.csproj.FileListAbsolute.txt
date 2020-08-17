@@ -1,0 +1,5 @@
+C:\Users\h\Desktop\sem3_2\obj\x86\Debug\sem3_2.csprojAssemblyReference.cache
+C:\Users\h\Desktop\sem3_2\obj\x86\Debug\App.xaml
+C:\Users\h\Desktop\sem3_2\obj\x86\Debug\MainPage.xaml
+C:\Users\h\Desktop\sem3_2\obj\x86\Debug\App.xbf
+C:\Users\h\Desktop\sem3_2\obj\x86\Debug\MainPage.xbf
