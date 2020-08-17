@@ -1,0 +1,1 @@
+C:\Users\h\Desktop\ObservableCollectionExample\ObservableCollectionExample.csproj;x86
