@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="WeatherDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeatherDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+    <StackPanel Background="Pink">
+        <StackPanel VerticalAlignment="Center">
+            <Image Name="RusultImage" Width="200" Height="200" HorizontalAlignment="Center"/>
+            <TextBlock Name="TempTextBlock" FontSize="53" Foreground="Yellow" HorizontalAlignment="Center"/>
+            <TextBlock Name="DecriptionTextBlock" FontSize="35" Foreground="Wheat" HorizontalAlignment="Center"/>
+           <TextBlock Name="LocationTextBlock" FontSize="24" Foreground="Wheat" HorizontalAlignment="Center" TextWrapping="Wrap"
+        </StackPanel>
+    </StackPanel>
+</Page>
