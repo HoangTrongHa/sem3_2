@@ -4,18 +4,17 @@
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  xmlns:iot="http://schemas.microsoft.com/appx/manifest/iot/windows10"
-  IgnorableNamespaces="uap mp iot">
+  IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="7d56e046-5ed9-4bbb-aae8-6ad1f5e931a1"
+    Name="479a9181-8241-408f-acc6-d4849ddba28d"
     Publisher="CN=h"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="7d56e046-5ed9-4bbb-aae8-6ad1f5e931a1" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="479a9181-8241-408f-acc6-d4849ddba28d" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>YoutubeApi</DisplayName>
+    <DisplayName>AccuWeatherApi</DisplayName>
     <PublisherDisplayName>h</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -31,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="YoutubeApi.App">
+      EntryPoint="AccuWeatherApi.App">
       <uap:VisualElements
-        DisplayName="YoutubeApi"
+        DisplayName="AccuWeatherApi"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="YoutubeApi"
+        Description="AccuWeatherApi"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
@@ -46,8 +45,5 @@
 
   <Capabilities>
     <Capability Name="internetClient" />
-    <iot:Capability Name="lowLevelDevices"/>
-    <DeviceCapability Name="location"/>
-    <DeviceCapability Name="lowLevel"/>
   </Capabilities>
 </Package>

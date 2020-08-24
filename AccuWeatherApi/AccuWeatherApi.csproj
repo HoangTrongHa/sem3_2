@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{5DC18552-8A90-45A5-84F5-A0EC3556ED35}</ProjectGuid>
+    <ProjectGuid>{687D1ED9-0C5A-40C4-AD61-4DFCA4A7B0F0}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WeatherDemo</RootNamespace>
-    <AssemblyName>WeatherDemo</AssemblyName>
+    <RootNamespace>AccuWeatherApi</RootNamespace>
+    <AssemblyName>AccuWeatherApi</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
@@ -122,8 +122,8 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\ApiManager.cs" />
-    <Compile Include="Models\LocationData.cs" />
+    <Compile Include="Models\WeatherEachDay.cs" />
+    <Compile Include="Models\WeatherJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -132,25 +132,6 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Weather\1.png" />
-    <Content Include="Assets\Weather\2.png" />
-    <Content Include="Assets\Weather\117530104_724726905017707_3779744489046446301_n.png" />
-    <Content Include="Assets\Weather\117545741_669841350407199_7314677925806924132_n %281%29 - Copy.png" />
-    <Content Include="Assets\Weather\117545741_669841350407199_7314677925806924132_n %281%29.png" />
-    <Content Include="Assets\Weather\117545741_669841350407199_7314677925806924132_n.png" />
-    <Content Include="Assets\Weather\117599321_1062016390867221_7893759733235976921_n - Copy.png" />
-    <Content Include="Assets\Weather\117599321_1062016390867221_7893759733235976921_n.png" />
-    <Content Include="Assets\Weather\117713668_727861537782008_6323169423244280515_n.png" />
-    <Content Include="Assets\Weather\117743256_673400573523925_4184881372630536921_n.png" />
-    <Content Include="Assets\Weather\117863243_630294290953424_7724480664154505592_n %281%29.png" />
-    <Content Include="Assets\Weather\117863243_630294290953424_7724480664154505592_n.png" />
-    <Content Include="Assets\Weather\117872433_1565011233671876_8324428779648769721_n.png" />
-    <Content Include="Assets\Weather\117912624_2755651727999319_4706967831704254259_n.png" />
-    <Content Include="Assets\Weather\117972189_995076134285099_9094741764161406841_n.png" />
-    <Content Include="Assets\Weather\117981623_1299333293744790_8286269275915643961_n.png" />
-    <Content Include="Assets\Weather\117984273_889919941532553_6699114928340525096_n.png" />
-    <Content Include="Assets\Weather\118150455_304302657493439_3654448222059769304_n - Copy.png" />
-    <Content Include="Assets\Weather\118150455_304302657493439_3654448222059769304_n.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -173,6 +154,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.10</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX">
+      <Version>4.2.0</Version>
     </PackageReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
