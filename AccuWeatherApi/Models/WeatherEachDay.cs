@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace AccuWeatherApi.Models
 {
-      public class Headline
+    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
+    public class Headline
     {
         public string EffectiveDate { get; set; }
         public int EffectiveEpochDate { get; set; }
@@ -19,6 +20,7 @@ namespace AccuWeatherApi.Models
         public string EndDate { get; set; }
         public int EndEpochDate { get; set; }
         public string MobileLink { get; set; }
+        public string Link { get; set; }
     }
 
     public class Minimum
@@ -26,7 +28,6 @@ namespace AccuWeatherApi.Models
         public double Value { get; set; }
         public string Unit { get; set; }
         public int UnitType { get; set; }
-       
     }
 
     public class Maximum
@@ -34,7 +35,6 @@ namespace AccuWeatherApi.Models
         public double Value { get; set; }
         public string Unit { get; set; }
         public int UnitType { get; set; }
-
     }
 
     public class Temperature1
@@ -46,13 +46,19 @@ namespace AccuWeatherApi.Models
     public class Day
     {
         public string Icon { get; set; }
-        public String IconPhrase { get; set; }
+        public string IconPhrase { get; set; }
+        //public bool HasPrecipitation { get; set; }
+        //public string PrecipitationType { get; set; }
+        //public string PrecipitationIntensity { get; set; }
     }
 
     public class Night
     {
-        public string Icon { get; set; }
-        public String IconPhrase { get; set; }
+        public int Icon { get; set; }
+        public string IconPhrase { get; set; }
+        //public bool HasPrecipitation { get; set; }
+        //public string PrecipitationType { get; set; }
+        //public string PrecipitationIntensity { get; set; }
     }
 
     public class DailyForecast
@@ -62,27 +68,27 @@ namespace AccuWeatherApi.Models
         public Temperature1 Temperature { get; set; }
         public Day Day { get; set; }
         public Night Night { get; set; }
-        public List<String> Sources { get; set; }
+        public List<string> Sources { get; set; }
         public string MobileLink { get; set; }
         public string Link { get; set; }
-
     }
 
     public class WeatherEachDay
     {
-        private static Stream dataSteam;
-
         public Headline Headline { get; set; }
         public List<DailyForecast> DailyForecasts { get; set; }
-        public async static Task<WeatherEachDay> GetWeatherEachDay(string url)
+
+        public  async static Task<WeatherEachDay> GetWeatherEach(string url)
         {
             var http = new HttpClient();
-            var response = await http.GetAsync(url); // nhan data tu json
+            var response = await http.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
-            var serializer = new DataContractJsonSerializer(typeof(List<WeatherEachDay>)); //dong bo 
-            var ms = new MemoryStream(Encoding.UTF8.GetBytes(result)); // format de khong bi loi 
-            var Value = serializer.ReadObject(dataSteam) as WeatherEachDay; // Doc ra giu lieu data
-            return Value;
+            var serializer = new DataContractJsonSerializer(typeof(WeatherEachDay));
+            var dataStream = new MemoryStream(Encoding.UTF8.GetBytes(result));
+            var value = serializer.ReadObject(dataStream) as WeatherEachDay;
+            return value;
         }
     }
+
+
 }
