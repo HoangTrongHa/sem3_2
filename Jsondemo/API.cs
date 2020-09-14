@@ -14,13 +14,12 @@ namespace Jsondemo
         public async Task<Root> getWether(double lat, double lon)
         {
             var http = new HttpClient();
-            var url = string.Format("https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=439d4b804bc8187953eb36d2a8c26a02");
+            var url = string.Format("http://api-demo-anhth.herokuapp.com/data.json");
             var response = await http.GetAsync(url); // nhan data tu json
             var result = await response.Content.ReadAsStringAsync();
             var serializer = new DataContractJsonSerializer(typeof(Root)); //dong bo 
             var ms = new MemoryStream(Encoding.UTF8.GetBytes(result)); // format de khong bi loi 
-            var data = (Root)serializer.ReadObject(ms); // Doc ra giu lieu data
-
+            var data = (Root)serializer.ReadObject(ms); // Doc ra giu lieu dat
             return data;
         }
         public class Coord
