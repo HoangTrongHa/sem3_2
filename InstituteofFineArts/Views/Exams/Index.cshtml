@@ -1,0 +1,52 @@
+﻿@model IEnumerable<InstituteofFineArts.Models.Exam>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Point)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Manager.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Topic.title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Point)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Manager.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Topic.title)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
